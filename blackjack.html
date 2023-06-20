@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Balckjack</title>
+    <style>
+        #grid-container {
+            display: grid;
+            grid-template-columns: auto;
+            width: 75%;
+            margin: auto;
+        }
+        .item {
+            border:1px solid black;
+            text-align: center;
+        }
+        .background {
+            background-image: url(https://media.istockphoto.com/photos/poker-table-felt-background-picture-id510657755?k=20&m=510657755&s=612x612&w=0&h=fvv-HCmYNGwMiZO8ZVHnz2KwYkJZRfXTDXxwHK-sAdw=);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+        .board,#controls,.result, #playerimages,#dealerimages {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #playerimages,#dealerimages{
+            height: 500px;
+        }
+        #playerboard,#dealerboard {
+            width: 50%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .buttons, button {
+            margin: 10px;
+        }
+        th,td {
+            border: 1px solid black;
+            width: 100px;
+            height: 28px;
+        }
+        img {
+            height: 200px;
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid-container">
+        <!-- head -->
+         <div class="item head"> 
+            <h2>Challenge 5:Blackjack</h2>
+            <h4 id="stateofgame">Let's Play</h4>
+        </div>
+
+
+        <div class="item background">
+            <div class="board" style="margin: 10px;">
+                <div id="playerboard">
+                    <h4>You: <span id="player-score">0</span></h4>
+                    <div id="playerimages">
+                        
+                    </div>
+                </div>
+                <div id="dealerboard">
+                    <h4>Dealer: <span id="dealer-score">0</span></h4>
+                    <div id="dealerimages">
+
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <div class="buttons">
+                    <button class="btn-lg btn-primary" id="hit-button">Hit</button>
+                    <button class="btn-lg btn-warning" id="stand-button">Stand</button>
+                    <button class="btn-lg btn-danger" id="deal-button">Deal</button>
+                </div>
+            </div>
+        </div> 
+
+        
+        <div class="item result"> 
+            <table style="margin: 10px;">
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+                <tr>
+                    <td id="no-of-wins">0</td>
+                    <td id="no-of-losses">0</td>
+                    <td id="no-of-draws">0</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div> 
+    <script src="blackjack.js"></script>
+</body>
+</html>
